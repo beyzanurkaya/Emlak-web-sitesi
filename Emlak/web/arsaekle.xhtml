@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html">
+ <h:head>
+ <title>Arsa Ekleme</title>
+  </h:head>
+ <h:body>
+ <h3>Arsa Ekleme</h3>
+ <h:form>
+ <h:panelGrid columns="2">
+<h:outputText value="ID:"/>
+ <h:inputText id="id" required="true"
+ requiredMessage="Id giriniz"
+ value="#{arsa.id}" />
+ <h:outputText value="Adı:"/>
+ <h:inputText id="ad" required="true"
+ requiredMessage="Arsa adı giriniz"
+ value="#{arsa.ad}" />
+ <h:outputText value="Arsa Adresi:"/>
+ <h:inputText id="adres" required="true"
+ requiredMessage="Konut adresini giriniz"
+ value="#{arsa.adres}"/>
+  <h:outputText value="Kira Bedeli:"/>
+  <h:inputText id="kira_bedeli"  required="true"
+ requiredMessage="Kira bedelini giriniz"
+               value="#{arsa.kira_bedeli}" />
+ <h:outputText value="Satış Bedeli:"/>
+ <h:inputText id="satis_bedeli" value="#{arsa.satis_bedeli}" />
+  
+ <h:commandButton value="Ekle"
+                  action="#{arsa.ekle()}"/>
+ 
+ <h:outputLink value="admin.xhtml">Admin Sayfası</h:outputLink>
+ 
+ </h:panelGrid>
+ </h:form>
+ </h:body>
+ </html>

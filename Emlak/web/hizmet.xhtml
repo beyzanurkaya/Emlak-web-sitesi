@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Hizmet</title>
+                <link rel="stylesheet" href="styles.css"></link>
+        <style>
+            div {
+                font-weight:bold;
+                width: 400px;
+                padding: 20px;
+		border: 22px;
+                padding: 25px;
+		color:#A63333;
+            }
+	    div2{
+                width: 200px;
+                padding: 30px;
+		border: 22px;
+                padding: 25px;
+		color:#A63333;
+		font-weight:bold;
+		font-size:20px;
+		text-align:center;
+	    }
+            body{
+                background-image: url(images/back-fon.jpg);
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
+        </style>
+    </h:head>
+    <h:body style="background-image: url(images/back-fon.jpg)">
+             <img src="images/ust2.PNG" alt="Sayfa Süsü"></img>   <br></br><br></br> 
+                  <br></br><br></br>
+<ul class="menu">
+            <li>
+            <a href="http://localhost:8080/EmlakWeb"><img src="images/logo_80x50.jpg" alt="sitemiz bizim emlak"></img></a>
+	</li>
+    <li>
+	   <a href="index.xhtml" class="sol">Anasayfa</a>
+	</li>
+    <li>
+	   <a href="hakkimizda.xhtml">Hakkımızda</a>
+	</li>
+    <li>
+	   <a href="#">Kategoriler</a>
+	<ul>
+	    <li>
+		    <a href="konut.xhtml" class="solust,sagust">Konut</a>
+		</li>
+	    <li>
+		    <a href="arsa.xhtml">Arsa</a>
+		</li>
+	    <li>
+		    <a href="isyeri.xhtml">İşyeri</a>
+		</li>
+	    <li>
+		    <a href="proje.xhtml" class="solalt,sagalt">Proje</a>
+		</li>		
+	</ul>
+	</li>
+        <li>
+	   <a href="hizmet.xhtml">Hizmet</a>
+	</li>
+        <li>
+	   <a href="iletisim.xhtml">İletişim</a>
+	</li>
+     <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li>
+	   <a href="uyegiris.xhtml">ÜYE GİRİŞİ</a>
+	</li>
+                <li>
+	   <a href="uyeol.xhtml">ÜYE OL</a>
+	</li>
+                     <li>
+            <a href="uyegiris.xhtml"><img src="images/engel_45x45.jpg" alt="oturum aç"></img></a>
+	</li>
+</ul>	
+                  <div>
+                      <br></br> <br></br> 
+<h3>BİZE ULAŞIN</h3><br></br>
+<h4 style="color:#6C5B7B">Aşağıdaki iletişim formunu doldurarak her türlü soru ve önerilerinizi departmanlarımıza iletebilirsiniz.</h4>
+<br></br>
+<h:form>
+ <h:panelGrid columns="1">
+ <h:outputText value="Mesajınızın Konusu:"/> <br></br> 
+ <h:selectOneRadio id="mesaj_konu" value="#{hizmet.mesajKonusu}" required="true" requiredMessage="Mesajınızın konusunu seçiniz">
+     <f:selectItem itemValue="konut" itemLabel="KONUT"/>
+     <f:selectItem itemValue="arsa" itemLabel="ARSA"/>
+     <f:selectItem itemValue="isyeri" itemLabel="İŞYERİ"/>
+     <f:selectItem itemValue="proje" itemLabel="PROJE"/>
+ </h:selectOneRadio> 
+<br></br>
+ <h:outputText value="Adınız:"/>
+ <h:inputText id="adi" required="true"
+ requiredMessage="Adınızı giriniz"
+ value="#{hizmet.ad}" validatorMessage="Adınız en fazla 30 karakter içerebilir">
+ <f:validateLength maximum="30"/> </h:inputText>
+ <h:message for="adi"/> 
+ <br></br>
+  <h:outputText value="Soyadınız:"/>
+ <h:inputText id="soyadi" required="true"
+ requiredMessage="Soyadınızı giriniz"
+ value="#{hizmet.soyad}" validatorMessage="Soyadınız en fazla 30 karakter içerebilir">
+ <f:validateLength maximum="30"/> </h:inputText>
+ <h:message for="soyadi"/> 
+  <br></br>
+ <h:outputText value="Telefon:"/>
+ <h:inputText id="telefon" required="true"
+ requiredMessage="Telefon numaranızı giriniz"             
+ value="#{hizmet.telefon}" validatorMessage="Geçersiz telefon numarası formatı">
+ <f:validateRegex pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" /></h:inputText> 
+ <h:message for="telefon" /> 
+  <br></br>
+ <h:outputText value="*E-Mail:"/>
+ <h:inputText id="mail" required="true"
+ requiredMessage="E-mailinizi giriniz"
+ value="#{hizmet.mail}" ><!--validatorMessage="Geçersiz e-mail formatı" >
+ <f:validateRegex pattern="\w+([-+.']\w+)@\w+([-.]\w+)\.\w+([-.]\w+)*" />-->
+ </h:inputText>
+ <h:message for="mail"/> 
+ <br></br>
+ <h:outputText value="Mesajınız(maximim 100 karakter):"/> <br></br>
+ <h:inputTextarea id="mesaj" rows="10" cols="30" required="true"
+ requiredMessage="Mesajınızı giriniz"
+ value="#{hizmet.mesajIcerik}" validatorMessage="Mesajınız en fazla 100 karakter içerebilir">
+ <f:validateLength maximum="100"/> </h:inputTextarea>
+ <h:message for="mesaj"/> 
+<br></br>  
+ <h:selectOneRadio id="bilgi_turu" value="#{hizmet.bilgiTuru}" required="true" requiredMessage="Bilgilendirme seçeneğinizi seçiniz">
+     <f:selectItem itemValue="tel1" itemLabel="Telefon ile bilgilendirilmek istiyorum"/>
+     <f:selectItem itemValue="mail1" itemLabel="Mail ile bilgilendirilmek istiyorum"/>
+ </h:selectOneRadio> 
+<h:commandButton style="margin-left:48px;margin-bottom:10px;padding:8px;background:#A63333;color:#fff"
+    value="GÖNDER" action="#{hizmet.mesaj_gonder()}"/>
+ </h:panelGrid>   
+</h:form>
+    </div>
+    </h:body>
+</html>

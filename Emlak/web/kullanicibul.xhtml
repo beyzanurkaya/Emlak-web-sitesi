@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:f="http://java.sun.com/jsf/core">
+ <h:head>
+ <title>Kullanıcı Bul</title>
+ </h:head>
+ <h:body>
+ <h3>Kullanıcı Bul</h3>
+  <h:dataTable value="#{login.bul()}" var="kullanici1"
+ border="0" cellpadding="10" cellspacing="3" >
+<h:column>
+<f:facet name="header">Id:</f:facet>
+#{kullanici1.id}
+</h:column>
+ <h:column>
+ <f:facet name="header">Adı:</f:facet>
+ #{kullanici1.ad}
+  </h:column>
+ <h:column>
+ <f:facet name="header">Soyadı:</f:facet>
+ #{kullanici1.soyad}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Telefonu:</f:facet>
+ #{kullanici1.telefon}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Maili:</f:facet>
+ #{kullanici1.mail}
+ </h:column>
+ <h:column>
+ <f:facet name="header">Şifresi:</f:facet>
+ #{kullanici1.sifre}
+ </h:column>     
+      <h:column>
+          <h:form>
+              <h:commandButton  value="Bu üyeyi tablodan sil" action="#{login.sil()}">
+                  <f:setPropertyActionListener target="#{login.silinecek_id}" value="#{kullanici1.id}" />
+              </h:commandButton>
+           </h:form>
+      </h:column>
+        
+ </h:dataTable>
+ <h:form>
+      <h:commandButton value="Geri" action="kullanicibul"/></h:form>
+ </h:body>
+ </html>
+

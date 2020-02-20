@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Ana Sayfa</title>
+        <link rel="stylesheet" href="styles.css"></link>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+     #a1 {
+       box-sizing: border-box;
+       display: inline-block;
+       text-align:center;
+       margin-left: 20px;
+     }
+          #a2 {
+       width: 160px;
+       height: 250px;
+       border: 2px solid #A63333;
+       box-sizing: border-box;
+       display: inline-block;
+       text-align:center;
+       margin-left: 500px;
+       
+     }
+            div {
+                font-weight:bold;
+                width: 400px;
+		border: 22px;
+		color:#A63333;
+            }
+	    div2{
+                width: 200px;
+                padding: 30px;
+		border: 22px;
+                padding: 25px;
+		color:#A63333;
+		font-weight:bold;
+		font-size:20px;
+		text-align:center;
+	    }
+            body{
+                background-image: url(images/back-fon.jpg);
+            }
+        </style>        
+    </h:head>
+    <h:body style="background-image: url(images/back-fon.jpg)">
+     <img src="images/ust2.PNG" alt="Sayfa Süsü"></img>   <br></br><br></br><br></br>  
+               
+<ul class="menu">
+        <li>
+            <a href="index2.xhtml"><img src="images/logo_80x50.jpg" alt="sitemiz bizim emlak"></img></a>
+	</li>
+    <li>
+	   <a href="http://localhost:8080/Emlak/">Anasayfa</a>
+	</li>
+    <li>
+	   <a href="hakkimizda.xhtml">Hakkımızda</a>
+	</li>
+    <li>
+	   <a href="#">Kategoriler</a>
+	<ul>
+	    <li>
+		    <a href="konut.xhtml">Konut</a>
+		</li>
+	    <li>
+		    <a href="arsa.xhtml">Arsa</a>
+		</li>
+	    <li>
+		    <a href="isyeri.xhtml">İşyeri</a>
+		</li>
+	    <li>
+		    <a href="proje.xhtml">Proje</a>
+		</li>		
+	</ul>
+	</li>
+        <li>
+	   <a href="hizmet.xhtml">Hizmet</a>
+	</li>
+        <li>
+	   <a href="iletisim.xhtml">İletişim</a>
+	</li>
+        <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+       <li>
+            <a style="color:#6C5B7B;font-size:20px;font-weight:bold">HOŞGELDİNİZ,&nbsp;&nbsp;&nbsp;#{login.ad}&nbsp;&nbsp;#{login.soyad}</a>
+	</li>
+
+</ul>	
+         
+     <div id="a1">
+     <div2>HIZLI ARAMA KÖŞESİ</div2><br></br>
+     <br></br>
+     <div>
+ <h:form style="border:2px solid #A63333">
+     <br></br>
+     <h:outputText style="color:#6C5B7B" value="Gayrimenkul Türü:"/> &nbsp;&nbsp; &nbsp;&nbsp;
+   <h:selectOneMenu id="secim" value="#{kullaniciler.secim}">
+   <f:selectItem itemValue="1" itemLabel="Konut" />
+   <f:selectItem itemValue="2" itemLabel="Arsa" />  
+   <f:selectItem itemValue="3" itemLabel="İşyeri" /> </h:selectOneMenu>
+     <br></br> 
+         <br></br>
+      <h:outputText style="color:#6C5B7B" value="Emlak tipi:"/>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <h:selectOneMenu id="secim2" value="#{kullaniciler.secim2}">
+   <f:selectItem itemValue="1" itemLabel="Satılık" />
+   <f:selectItem itemValue="2" itemLabel="Kiralık" /> </h:selectOneMenu>   <br></br>
+   <br></br>
+  <h:outputText style="color:#6C5B7B" value="Fiyat Aralığı:"/>&nbsp;&nbsp;
+      <h:inputText value="#{arama.min}" p:placeholder="baslangıc degeri" size="15" maxlength="20"></h:inputText>
+      <br></br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <h:inputText value="#{arama.max}" p:placeholder="bitis degeri" size="15" maxlength="20"></h:inputText>
+       <br></br> <br></br>
+       <h:commandButton style="margin-left:20px;margin-bottom:10px;padding:8px;background:#A63333;color:#fff" type="submit" value="ARA" action="#{arama.ara()}"/>
+       &nbsp;&nbsp;&nbsp;&nbsp;<a href="sonuc.xhtml">Sonucu gor</a>
+</h:form>
+     </div></div>
+                  <div id="a2"><br></br>
+         <p style="color:#6C5B7B;font-weight:bold;font-size:15px;">BİZİ TAKİP EDİN</p><br></br>
+         <a href="https://www.facebook.com/Bizim-Emlak-1074748906043110"><img src="images/face.png" alt="facebook"></img></a><br></br>
+         <a href="https://mobile.twitter.com/bizimemlakk"><img src="images/twit.jpg" alt="twitter"></img></a><br></br>
+         <a href="https://www.instagram.com/bizim_emlakk/"><img src="images/inst.png" alt="instagram"></img></a><br></br><br></br>
+     </div>
+     <br></br><br></br>
+<MARQUEE width="1300"> 
+    <img src="images/site_300x200.jpg"></img>
+    <img src="images/arsa_300x200.jpg"></img>
+    <img src="images/ofis_300x200.jpg"></img>
+    <img src="images/ev_300x200.jpg"></img>
+    <img src="images/arsa2_300x200.jpg"></img>
+    <img src="images/insaat_300x200.jpg"></img>
+    <img src="images/arsa3_300x200.jpg"></img>
+</MARQUEE>        
+    </h:body>
+</html>

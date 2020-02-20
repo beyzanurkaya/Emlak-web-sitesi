@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html">
+ <h:head>
+ <title>Konut Bul</title>
+  </h:head>
+ <h:body>
+ <h3>Konut Arama</h3>
+ <h:form>
+     <h:panelGrid columns="1">
+<h:outputText value="Konut Adı:"/>
+ <h:inputText id="ad" required="true"
+ requiredMessage="Konutun adını giriniz"
+ value="#{konut.bulunacak_kayit}" />
+   <h:commandButton value="Bul"
+                  action="konutbul"/>
+  
+<h:outputLink value="index2.xhtml">Ana Sayfa</h:outputLink>
+ </h:panelGrid>
+ </h:form>
+ 
+ </h:body>
+ </html>

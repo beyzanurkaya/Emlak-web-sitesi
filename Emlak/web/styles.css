@@ -1,0 +1,114 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 7, 2019, 11:52:52 PM
+    Author     : gizze
+*/
+*{
+        padding:0;
+	margin:0;
+	border:0;
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+ul.menu{
+	height:50px;
+	}
+ul.menu >li{
+	float:left;
+	position:relative;
+	} 
+ul.menu >li >a{
+	display:block;
+	font:14px verdana,arial;
+	color:#A63333;
+        font-weight:bold;
+	padding:0px 15px;
+        line-height:50px;
+        border-right:1px solid rgba(0,0,0,.1);	
+}
+ul.menu li a:hover{
+	background:#A63333;
+	color:#fff;
+	box-shadow:inset 0 0 15px black;
+}
+ul.menu ul{
+       background-image: url(images/back-fon.jpg);
+	width:120px;
+	position:absolute;
+	top:30px;
+	left:0px;
+	padding:10px;
+	opacity:0;
+	transition:500ms all;
+	visibility:hidden;
+}
+ul.menu ul li{
+	position:relative;
+}
+ul.menu ul li a{
+	display:block;
+	padding:7px 12 px;
+	color:#A63333;
+        font-weight:bold;
+	font-size:14px;
+}
+ul.menu >li:hover >ul{
+	opacity:1;
+	visibility:visible;
+	top:50px;
+}
+.solust{
+	border-top-left-radius:15px;
+	}
+.sagust{
+	border-top-right-radius:15px;
+	}
+.solalt{
+	border-bottom-left-radius:15px;
+	}
+.sagalt{
+	border-bottom-right-radius:15px;
+	}
+#social_media{
+    float:right;
+    background:red; 
+}
+#arama{
+    float:right;
+}
+#menu{
+    width:90px;
+    height:20px;
+    margin-left: 390px;
+    float:right;
+}
+#header{
+    width:1200px;
+    height:1300px;
+    padding-top:20px;
+    padding-bottom:0px;     
+}
+#site{
+    width:1200px;
+    height:2000px;
+    margin:auto;    
+}
+#site_Adi{
+    float:left;
+    margin-right:0px;
+}
+body #site #header #site_adi #social_media a img{
+    width:25px;
+    height:25px;
+}
+ body{
+     background-image: url(images/back-fon.jpg);
+    }
+
+

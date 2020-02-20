@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html">
+ <h:head>
+ <title>Kullanıcı Ekleme</title>
+  </h:head>
+ <h:body>
+ <h3>Kullanıcı Ekleme</h3>
+ <h:form>
+ <h:panelGrid columns="2">
+ <h:outputText value="Kullanıcı Adı:"/>
+ <h:inputText id="ad" required="true"
+ requiredMessage="Ad giriniz"
+ value="#{login.ad}" />
+ <h:outputText value="Kullanici Soyadı:"/>
+ <h:inputText id="soyad" required="true"
+ requiredMessage="Soyadı giriniz"
+ value="#{login.soyad}"/>
+ <h:outputText value="Kullanici Telefon:"/>
+ <h:inputText id="telefon" required="true"
+ requiredMessage="Telefon numarası giriniz"
+ value="#{login.telefon}"/>
+ <h:outputText value="Kullanici Mail:"/>
+ <h:inputText id="mail" required="true"
+ requiredMessage="Mail giriniz"
+ value="#{login.mail}"/>
+ <h:outputText value="Kullanici Şifre:"/>
+ <h:inputSecret id="sifre" required="true"
+ requiredMessage="Şifre giriniz"
+ value="#{login.sifre}"/>
+  
+ <h:commandButton value="Ekle"
+                  action="#{login.ekle()}"/>
+ 
+ <h:outputLink value="admin.xhtml">Admin Sayfası</h:outputLink>
+ 
+ </h:panelGrid>
+ </h:form>
+ </h:body>
+ </html>

@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Üye Ol</title>
+        <link rel="stylesheet" href="styles.css"></link>
+        <style>
+            div {
+                font-weight:bold;
+                width: 400px;
+                padding: 20px;
+		border: 22px;
+                padding: 25px;
+		color:#A63333;
+            }
+	    div2{
+                width: 200px;
+                padding: 30px;
+		border: 22px;
+                padding: 25px;
+		color:#A63333;
+		font-weight:bold;
+		font-size:20px;
+		text-align:center;
+	    }
+            body{
+                background-image: url(images/back-fon.jpg);
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
+        </style>
+    </h:head>
+    <h:body style="background-image: url(images/back-fon.jpg)">
+             <img src="images/ust2.PNG" alt="Sayfa Süsü"></img>   <br></br><br></br> 
+                  <br></br><br></br>                 
+<ul class="menu">
+            <li>
+            <a href="index.xhtml"><img src="images/logo_80x50.jpg" alt="sitemiz bizim emlak"></img></a>
+	</li>
+    <li>
+	   <a href="http://localhost:8080/Emlak/" class="sol">Anasayfa</a>
+	</li>
+    <li>
+	   <a href="hakkimizda.xhtml">Hakkımızda</a>
+	</li>
+    <li>
+	   <a href="#">Kategoriler</a>
+	<ul>
+	    <li>
+		    <a href="konut.xhtml" class="solust,sagust">Konut</a>
+		</li>
+	    <li>
+		    <a href="arsa.xhtml">Arsa</a>
+		</li>
+	    <li>
+		    <a href="isyeri.xhtml">İşyeri</a>
+		</li>
+	    <li>
+		    <a href="proje.xhtml" class="solalt,sagalt">Proje</a>
+		</li>		
+	</ul>
+	</li>
+        <li>
+	   <a href="hizmet.xhtml">Hizmet</a>
+	</li>
+        <li>
+	   <a href="iletisim.xhtml">İletişim</a>
+	</li>
+     <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li>
+	   <a href="uyegiris.xhtml">ÜYE GİRİŞİ</a>
+	</li>
+                <li>
+	   <a href="uyeol.xhtml">ÜYE OL</a>
+	</li>
+                     <li>
+            <a href="uyegiris.xhtml"><img src="images/engel_45x45.jpg" alt="oturum aç"></img></a>
+	</li>
+
+</ul>	
+     <br></br>
+<div>
+<h3>KAYDOL</h3>
+<br></br>
+<h4 style="color:#6C5B7B">*Yıldızlı alanlar doldurulması zorunlu alanlardır.</h4><br></br>
+<h:form>
+ <h:panelGrid columns="1">
+<!-- <h:outputText value="*Id:"/>
+ <h:inputText id="id" required="true"
+ requiredMessage="ID giriniz"
+ value="#{kullanici.id}" /> -->
+ <h:outputText value="*Adınız:"/>
+ <h:inputText id="adi" required="true"
+ requiredMessage="Adınızı giriniz"
+ value="#{login.ad}" validatorMessage="Adınız en fazla 30 karakter içerebilir">
+ <f:validateLength maximum="30"/> </h:inputText>
+ <h:message for="adi"/> 
+ <h:outputText value="*Soyadınız:"/>
+ <h:inputText id="soyadi" required="true"
+ requiredMessage="Soyadınız giriniz"
+ value="#{login.soyad}" validatorMessage="Soyadınız en fazla 30 karakter içerebilir">
+ <f:validateLength maximum="30"/> </h:inputText> 
+ <h:message for="soyadi"/> 
+ <h:outputText value="Telefon:"/>
+ <h:inputText id="telefon" required="true"
+ requiredMessage="Telefon numaranızı giriniz"             
+ value="#{login.telefon}" validatorMessage="Geçersiz telefon numarası formatı">
+ <f:validateRegex pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}" /></h:inputText> 
+ <h:message for="telefon" /> 
+ <h:outputText value="*E-Mail:"/>
+ <h:inputText id="mail" required="true"
+ requiredMessage="E-mailinizi giriniz"
+ value="#{login.mail}" ><!--validatorMessage="Geçersiz e-mail formatı" >
+ <f:validateRegex pattern="\w+([-+.']\w+)@\w+([-.]\w+)*\.\w+([-.]\w+)*$" />-->
+ </h:inputText>
+ <h:message for="mail"/> 
+ <h:outputText value="*Sıfre:"/>
+ <h:inputSecret id="sifre" required="true"
+ requiredMessage="Sifrenizi giriniz"
+ value="#{login.sifre}"></h:inputSecret>  
+ <br></br>
+<h:commandButton style="margin-left:40px;margin-bottom:10px;padding:8px;background:#A63333;color:#fff"
+    value="ÜYE OL" action="#{login.ekle()}"/>
+ </h:panelGrid>   
+</h:form>
+</div>
+    </h:body>
+</html>
+

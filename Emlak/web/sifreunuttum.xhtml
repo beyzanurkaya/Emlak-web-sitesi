@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                        <link rel="stylesheet" href="styles.css"></link>
+        <style>
+            div {
+                font-weight:bold;
+                width: 400px;
+                padding: 20px;
+		border: 22px;
+                padding: 25px;
+		color:#A63333;
+            }
+	    div2{
+                width: 200px;
+                padding: 30px;
+		border: 22px;
+                padding: 25px;
+		color:#A63333;
+		font-weight:bold;
+		font-size:20px;
+		text-align:center;
+	    }
+      #a1 {
+       border: 0px solid #A63333;
+       box-sizing: border-box;
+       display: inline-block;
+       text-align:center;
+       margin-left:500px;
+       margin-top: 10px;
+     }
+            body{
+                background-image: url(images/back-fon.jpg);
+                background-repeat: repeat;
+                background-attachment: scroll;
+            }
+        </style>
+    </h:head>
+    <h:body style="background-image: url(images/back-fon.jpg)">
+    <img src="images/ust2.PNG" alt="Sayfa Süsü"></img>   <br></br><br></br> 
+                  <br></br><br></br>                 
+<ul class="menu">
+            <li>
+            <a href="index.xhtml"><img src="images/logo_80x50.jpg" alt="sitemiz bizim emlak"></img></a>
+	</li>
+    <li>
+	   <a href="http://localhost:8080/Emlak/" class="sol">Anasayfa</a>
+	</li>
+    <li>
+	   <a href="hakkimizda.xhtml">Hakkımızda</a>
+	</li>
+    <li>
+	   <a href="#">Kategoriler</a>
+	<ul>
+	    <li>
+		    <a href="konut.xhtml" class="solust,sagust">Konut</a>
+		</li>
+	    <li>
+		    <a href="arsa.xhtml">Arsa</a>
+		</li>
+	    <li>
+		    <a href="isyeri.xhtml">İşyeri</a>
+		</li>
+	    <li>
+		    <a href="proje.xhtml" class="solalt,sagalt">Proje</a>
+		</li>		
+	</ul>
+	</li>
+        <li>
+	   <a href="hizmet.xhtml">Hizmet</a>
+	</li>
+        <li>
+	   <a href="iletisim.xhtml">İletişim</a>
+	</li>
+     <li> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+                <li>
+	   <a href="uyegiris.xhtml">ÜYE GİRİŞİ</a>
+	</li>
+                <li>
+	   <a href="uyeol.xhtml">ÜYE OL</a>
+	</li>
+                     <li>
+            <a href="uyegiris.xhtml"><img src="images/engel_45x45.jpg" alt="oturum aç"></img></a>
+	</li>
+
+</ul>	
+     <br></br>
+     <div class="a1">
+        <div class="login">
+                      
+               <h3 style="font-weight:bold">ŞİFREMİ UNUTTUM</h3>
+            <h:form >             
+                <br></br>
+                <h:inputText style="font-weight:bold;color:#6C5B7B;" value="#{login.mail}" p:placeholder="Mailinizi giriniz" ></h:inputText>
+                <br></br><br></br>
+                <h:inputSecret style="font-weight:bold;color:#6C5B7B;" value="#{login.sifre}" p:placeholder="Yeni parolanızı giriniz" ></h:inputSecret>  
+            <br></br> <br></br>
+ 
+                <p class="remember_me">
+                    <br></br>
+                <h:selectBooleanCheckbox/>Beni hatırla
+                </p>
+            <br></br>
+             <h:commandButton style="margin-left:40px;margin-bottom:10px;padding:8px;background:#A63333;color:#fff"
+                              value="KAYDET" type="submit" action="#{login.update()}" />
+             
+            <br></br>
+            </h:form>
+        </div>
+     </div>
+    </h:body>
+</html>
