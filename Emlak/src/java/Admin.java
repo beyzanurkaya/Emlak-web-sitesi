@@ -34,7 +34,6 @@ import javax.faces.bean.*;
  */
 /**
  *
- * @author gizze
  *
  *
  *
